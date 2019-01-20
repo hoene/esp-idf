@@ -61,3 +61,6 @@
 [submodule "components/protobuf-c/protobuf-c"]
 	path = components/protobuf-c/protobuf-c
 	url = https://github.com/protobuf-c/protobuf-c
+[submodule "components/libesphttpd"]
+	path = components/libesphttpd
+	url = https://github.com/chmorgan/libesphttpd.git
