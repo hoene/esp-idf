@@ -637,6 +637,11 @@ static void IRAM_ATTR rmt_driver_isr_default(void* arg)
                         rmt_fill_memory(channel, pdata, p_rmt->tx_sub_len, p_rmt->tx_offset);
                         p_rmt->tx_data += p_rmt->tx_sub_len;
                         p_rmt->tx_len_rem -= p_rmt->tx_sub_len;
+                        if(p_rmt->tx_offset == 0) {             // as for security. Set the last entry to 0
+                            RMTMEM.chan[channel].data32[p_rmt->tx_sub_len].val = 0;
+                        } else {
+                            RMTMEM.chan[channel].data32[0].val = 0;
+                        }
                     } else if(len_rem == 0) {
                         RMTMEM.chan[channel].data32[p_rmt->tx_offset].val = 0;
                     } else {

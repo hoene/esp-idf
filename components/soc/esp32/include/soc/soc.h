@@ -421,7 +421,7 @@
  *      23                      3               extern level
  *      24                      4               extern level            TG1_WDT
  *      25                      4               extern level            CACHEERR
- *      26                      5               extern level
+ *      26                      5               extern level			RMI Assembler
  *      27                      3               extern level            Reserved                Reserved
  *      28                      4               extern edge             DPORT ACCESS            DPORT ACCESS
  *      29                      3               software                Reserved                Reserved
