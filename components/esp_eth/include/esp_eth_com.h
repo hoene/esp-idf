@@ -91,6 +91,8 @@ typedef enum {
     ETH_CMD_S_PHY_ADDR,    /*!< Set PHY address */
     ETH_CMD_G_SPEED,       /*!< Get Speed */
     ETH_CMD_S_PROMISCUOUS, /*!< Set promiscuous mode */
+    ETH_CMD_G_DUPLEX,      /*!< Get Duplex */
+    ETH_CMD_G_LINK,        /*!< Get Link */
 } esp_eth_io_cmd_t;
 
 /**

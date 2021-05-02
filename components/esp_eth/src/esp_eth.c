@@ -369,6 +369,14 @@ esp_err_t esp_eth_ioctl(esp_eth_handle_t hdl, esp_eth_io_cmd_t cmd, void *data)
     case ETH_CMD_S_PROMISCUOUS:
         ETH_CHECK(mac->set_promiscuous(mac, (bool)data) == ESP_OK, "set promiscuous mode failed", err, ESP_FAIL);
         break;
+    case ETH_CMD_G_DUPLEX:
+        ETH_CHECK(data, "no mem to store duplex value", err, ESP_ERR_INVALID_ARG);
+        *(eth_duplex_t *)data = eth_driver->duplex;
+        break;
+    case ETH_CMD_G_LINK:
+        ETH_CHECK(data, "no mem to store link value", err, ESP_ERR_INVALID_ARG);
+        *(eth_link_t *)data = eth_driver->link;
+        break;
     default:
         ETH_CHECK(false, "unknown io command: %d", err, ESP_ERR_INVALID_ARG, cmd);
         break;
